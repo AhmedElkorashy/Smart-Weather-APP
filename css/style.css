@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+  box-sizing: border-box; 
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -60,7 +60,7 @@ small {
   }
   &::placeholder {
     color: rgba(255, 255, 255, 0.458);
-    /* padding-left: 0.3125rem; */
+    
   }
 }
 .location-btn {
