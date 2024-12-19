@@ -8,11 +8,11 @@ async function searchRegion(a = "cairo") {
   let forCast = await fetch(
     `https://api.weatherapi.com/v1/forecast.json?key=cfb39f2407924993aa2221145241712&q=${a}&days=3`
   );
+  loading.classList.add("d-none");
   if (forCast.ok) {
     let forcast_new = await forCast.json();
     display(forcast_new);
     console.log(forcast_new);
-    loading.classList.add("d-none");
   }
 }
 
