@@ -2,17 +2,17 @@ let search = document.getElementById("search");
 let firstOne = document.querySelector("#fistOne");
 let secondOne = document.querySelector("#secondONe");
 let thirdOne = document.querySelector("#thirdOne");
+let loading = document.getElementById("loading");
 async function searchRegion(a = "cairo") {
-  // Assuming you want the first location from the result
+  loading.classList.remove("d-none");
   let forCast = await fetch(
     `https://api.weatherapi.com/v1/forecast.json?key=cfb39f2407924993aa2221145241712&q=${a}&days=3`
   );
   if (forCast.ok) {
     let forcast_new = await forCast.json();
-
-    // Get the current temperature in Celsius
     display(forcast_new);
     console.log(forcast_new);
+    loading.classList.add("d-none");
   }
 }
 
